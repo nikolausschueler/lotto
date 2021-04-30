@@ -10,4 +10,4 @@ def lotto():
     return str(sorted(ra.sample(range(1, 50), 6)))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=10770)
