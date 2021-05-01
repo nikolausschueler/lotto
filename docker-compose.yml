@@ -1,0 +1,5 @@
+sillynames:
+  build: .
+  ports:
+    - "10770:10770"
+  restart: always
