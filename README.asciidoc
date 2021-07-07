@@ -1,0 +1,92 @@
+= The Lotto random number web app
+
+== What is this?
+
+A while ago, we played Lotto (the German "Sechs aus Neunundvierzig"footnote:[Roughly
+translatable as "Six from fortynine".]) in the family (ignoring my hints about the
+improbability of actually winning in a lottery). So I, as the mathematician, was
+asked to come up with random numbers. After a while, I got too lazy to make up
+numbers, so I wrote this little web application.
+
+It is written in Python, using the Flask framework.
+
+You can see the app running on http://server.drnik.org:10770.
+footnote:[Unless I play around with the installation and the app is offline.]
+
+As I have no reverse proxy for a nice URL set up so far (see the to do section),
+the app is running on a port that tries to resemble the german word _LOTTO_ in
+some kind of leetspeak.
+
+To get a new set of numbers, reload the page. A button for this is on the wish
+list, see the to do section.
+
+== Usage
+
+The easiest way to run this app is using Docker Compose. If you don't have it
+already, install docker-compose. Then go to the directory where your clone of
+this repo is and just run:
+
+....
+$ docker-compose up
+....
+
+If you want, you can run this app manually. Just create a virtualenv with Python
+3 and install Flask:
+
+....
+$ mkvirtualenv -p python3 venv
+$ pip install flask
+$ lotto/lotto.py
+....
+
+Alternatively, you can install Flask on your machine and run the app.
+
+== TODO
+
+This app is a little exercise in Docker and Docker Compose for me. It works,
+but there sure is room for improvement. Some ideas are:
+
+=== Tests
+
+Add Selenium tests for the GUI. Add application tests for Flask. And, if you one
+day have a REST interface, test that too.
+
+=== Run on HTTPS
+
+Bummer, right now the thing runs on HTTP. In 2021. Really? Bad boy. Make it run on HTTPS.
+A certificate from Let's Encrypt would do.
+
+=== Make it nicer
+
+Add a HTML template.
+
+Use some CSS for styling. Show numbers nicely formatted, not as a plain Python
+list. Bonus points for creating a responsive web app, using Bootstrap or so.
+
+=== Add a button
+
+In the moment you have to reload the web page to get a new set of numbers.
+Provide a button that says something like "Give me more numbers".
+
+=== Use another Docker image
+
+Make the resulting image smaller by basing it on Alpine Linux or so. Or use an
+official Python image instead of a generic Ubuntu.
+
+=== Docker finetuning
+
+Specify an explicit non-root user. Use a WORKDIR. Check the image with hadolint.
+Best set up linting (for Docker and Python) automatically. Find out, which
+automatisms/triggers GitHub offers for this (if any).
+
+=== Nice URL
+
+Let it run under a URL like http://example.com/lotto. For this, you need to set
+up a reverse proxy. As we already use Docker Compose, the proxy is best set up
+the same way.
+
+=== Add a REST API
+
+Add a REST API. Charge $5 for each call of the API. Get indecently
+rich.footnote:[Only joking. But the part about the REST API is true. Would be
+really nice to have that.]
