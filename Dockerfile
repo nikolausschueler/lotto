@@ -1,9 +1,17 @@
-FROM ubuntu:latest
+FROM python:3.10-rc-buster
 
-RUN apt-get update && \
-  apt-get install -y python3 && \
-  apt-get install -y python3-pip && \
-  pip3 install flask
+RUN groupadd --gid 999 bert && \
+    useradd --system \
+    --home-dir /home/bert --create-home \
+    --uid 999 --gid bert bert
+
+RUN chown -R bert:bert /home/bert
+
+USER bert
+
+# We need the lib, not the script, so right now we don't care about the script's
+# location.
+RUN pip install --no-warn-script-location flask
 
 COPY ./lotto/lotto.py /
 
