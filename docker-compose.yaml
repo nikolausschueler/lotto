@@ -1,4 +1,4 @@
-sillynames:
+lotto:
   build: .
   ports:
     - "10770:10770"
