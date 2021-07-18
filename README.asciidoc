@@ -41,6 +41,20 @@ $ lotto/lotto.py
 
 Alternatively, you can install Flask on your machine and run the app.
 
+== Refinements/Changelog
+
+Initially, the image was based on plain Ubuntu. Now it uses an official Python
+image, which again is based on Alpine Linux. This change makes the resulting
+image smaller by a significant amount. Instead of slightly over 400 MB it now is
+just 50 MB big.
+
+The other advantage of using the Python image is of course that it saves you
+some installation steps, especially the installation of Python itself.
+
+I first tried to use the Python image _python:3.10-rc-buster_ as base image for
+the container. This actually increased the image size up to nearly 900 MB. So I
+switched to an Alpine-based image.
+
 == TODO
 
 This app is a little exercise in Docker and Docker Compose for me. It works,
@@ -67,11 +81,6 @@ list. Bonus points for creating a responsive web app, using Bootstrap or so.
 
 In the moment you have to reload the web page to get a new set of numbers.
 Provide a button that says something like "Give me more numbers".
-
-=== Use another Docker image
-
-Make the resulting image smaller by basing it on Alpine Linux or so. Or use an
-official Python image instead of a generic Ubuntu.
 
 === Docker finetuning
 
