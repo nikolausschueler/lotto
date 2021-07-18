@@ -55,6 +55,8 @@ I first tried to use the Python image _python:3.10-rc-buster_ as base image for
 the container. This actually increased the image size up to nearly 900 MB. So I
 switched to an Alpine-based image.
 
+All the Python images can be found here: https://hub.docker.com/_/python.
+
 == TODO
 
 This app is a little exercise in Docker and Docker Compose for me. It works,
