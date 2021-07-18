@@ -1,11 +1,9 @@
-FROM python:3.10-rc-buster
+FROM python:3.10-rc-alpine
 
-RUN groupadd --gid 999 bert && \
-    useradd --system \
-    --home-dir /home/bert --create-home \
-    --uid 999 --gid bert bert
-
-RUN chown -R bert:bert /home/bert
+RUN addgroup -S bert && \
+    adduser --system \
+    --home /home/bert \
+    --ingroup bert bert
 
 USER bert
 
