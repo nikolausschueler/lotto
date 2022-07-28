@@ -72,13 +72,6 @@ day have a REST interface, test that too.
 Bummer, right now the thing runs on HTTP. In 2021. Really? Bad boy. Make it run on HTTPS.
 A certificate from Let's Encrypt would do.
 
-=== Make it nicer
-
-Add a HTML template.
-
-Use some CSS for styling. Show numbers nicely formatted, not as a plain Python
-list. Bonus points for creating a responsive web app, using Bootstrap or so.
-
 === Add a button
 
 In the moment you have to reload the web page to get a new set of numbers.
