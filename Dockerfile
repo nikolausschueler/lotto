@@ -11,7 +11,6 @@ USER bert
 # location.
 RUN pip install --no-warn-script-location flask
 
-COPY ./lotto/lotto.py /
-COPY ./lotto/templates /templates
+COPY ./lotto /lotto
 
-CMD /./lotto.py
+CMD ./lotto/lotto.py
