@@ -10,7 +10,7 @@ numbers, so I wrote this little web application.
 
 It is written in Python, using the Flask framework.
 
-You can see the app running on http://server.drnik.org:10770.
+You can see the app running on http://server.drnik.org:10770[window="_blank"].
 footnote:[Unless I play around with the installation and the app is offline.]
 
 As I have no reverse proxy for a nice URL set up so far (see the to do section),
