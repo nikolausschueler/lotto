@@ -1,0 +1,22 @@
+html {
+  font-family: Verdana, sans-serif;
+
+  /*
+   * A bit of responsive design: Set font size in relation to viewpoint (display
+   * size).
+   */
+  font-size: 8vw;
+}
+
+ul {
+  list-style: none;
+}
+
+ul, li {
+  display: inline;
+
+  /*
+   * A bit more room between the numbers.
+   * */
+  padding: 0% 1%;
+}
