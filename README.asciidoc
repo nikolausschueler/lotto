@@ -72,6 +72,12 @@ day have a REST interface, test that too.
 Bummer, right now the thing runs on HTTP. In 2021. Really? Bad boy. Make it run on HTTPS.
 A certificate from Let's Encrypt would do.
 
+Looks like you would have to run the app with WSGI or Apache to do that properly
+(with an officially accepted certificate).
+Flask can provide certificates, but they are not "official" and will not be
+accepted without confirmation by browsers, see:
+https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https.
+
 === Add a button
 
 In the moment you have to reload the web page to get a new set of numbers.
